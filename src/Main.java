@@ -2,6 +2,8 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 class Person {
     private final String surname;
@@ -38,6 +40,8 @@ class Person {
 }
 
 public class Main {
+    private static final Logger logger = Logger.getLogger(Main.class.getName());
+
     public static void main(String[] args) {
         try (Scanner scanner = new Scanner(System.in)) {
             System.out.println("Введите данные в формате: Фамилия Имя Отчество дата_рождения номер_телефона пол");
@@ -77,7 +81,7 @@ public class Main {
                 System.out.println("Данные успешно записаны в файл " + filename);
             } catch (IOException e) {
                 System.out.println("Ошибка при записи в файл: " + e.getMessage());
-                e.printStackTrace();
+                logger.log(Level.SEVERE, "Ошибка при записи в файл", e);
             }
         }
     }
