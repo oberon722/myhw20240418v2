@@ -4,12 +4,12 @@ import java.io.IOException;
 import java.util.Scanner;
 
 class Person {
-    private String surname;
-    private String firstName;
-    private String middleName;
-    private String birthDate;
-    private long phoneNumber;
-    private char gender;
+    private final String surname;
+    private final String firstName;
+    private final String middleName;
+    private final String birthDate;
+    private final long phoneNumber;
+    private final char gender;
 
     public Person(String surname, String firstName, String middleName, String birthDate, long phoneNumber, char gender) {
         this.surname = surname;
